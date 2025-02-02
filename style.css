@@ -1,0 +1,587 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+
+}
+a{
+    text-decoration: none;
+}
+
+/* navbar  */
+    
+    .navbar-toggler {
+        padding: 0.25rem 0.5rem;
+    }
+    
+    .filter-white {
+        filter: invert(1) brightness(200%);  /* Makes the toggler icon white */
+    }
+    
+    .hover-effect {
+        position: relative;
+        transition: color 0.3s ease;
+    }
+    
+    .hover-effect::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: white;
+        transition: width 0.3s ease;
+    }
+    
+    .hover-effect:hover::after {
+        width: 100%;
+    }
+    
+    .nav-link {
+        padding: 0.5rem 1rem !important;  /* More spacing between nav items */
+    }
+    
+    /* Better mobile menu appearance */
+    @media (max-width: 991px) {
+        .navbar-collapse {
+            background-color: #7F0101;
+            padding: 1rem;
+            border-radius: 0 0 8px 8px;
+        }
+        
+        .nav-item {
+            margin: 0.5rem 0;
+        }
+    }
+/* hero section  */
+.hero-container {
+    position: relative;
+    height: 75vh; /* Reduced from 100vh to 75vh */
+    width: 100%;
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),
+                url('images/wc.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: white;
+    overflow: hidden;
+}
+
+.hero-content {
+    padding: 0 20px;
+    max-width: 1200px;
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: 4.5rem; /* Slightly reduced from 5rem */
+    font-weight: 700;
+    margin-bottom: 1rem;
+    letter-spacing: -1px;
+    text-transform: uppercase;
+}
+
+.hero-subtitle {
+    font-size: 2.2rem; /* Slightly reduced from 2.5rem */
+    font-weight: 300;
+    margin-bottom: 2rem;
+}
+
+.btn-outline-light {
+    border-width: 2px;
+}
+
+.btn-outline-light:hover {
+    background-color: white;
+    color: #000;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .hero-container {
+        height: 60vh; /* Even shorter on mobile */
+    }
+
+    .hero-title {
+        font-size: 3rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.8rem;
+    }
+    
+    .hero-buttons .btn {
+        margin: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+    .hero-container {
+        height: 50vh; /* Shortest on small mobile */
+    }
+
+    .hero-title {
+        font-size: 2.5rem;
+    }
+
+    .hero-subtitle {
+        font-size: 1.5rem;
+    }
+    
+    .hero-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .hero-buttons .btn {
+        width: 100%;
+        margin: 0;
+    }
+}
+.main-card {
+    background-color: #F8FBFE;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.main-card img {
+    border-radius: 20px 0 0 20px;
+    height: 100%;
+    object-fit: cover;
+}
+
+.small-card img {
+    border-radius: 10px;
+    object-fit: cover;
+    width: 100%;
+    height: 150px;
+}
+.small-card .card-img-top {
+    transition: transform 0.3s ease-in-out;
+    overflow: hidden;
+}
+
+.small-card:hover .card-img-top {
+    transform: scale(1.1);
+}
+
+.image-container {
+    overflow: hidden;
+}
+
+/* For main card hover effect if needed */
+.main-card img {
+    transition: transform 0.3s ease-in-out;
+}
+
+.main-card:hover img {
+    transform: scale(1.05);
+}
+
+.break-space {
+    width: 100%;
+    height: 7rem;  /* or adjust height as needed */
+    background-color: #dfdfdf;  /* light grey color */
+    margin: 4rem 0;  /* adds margin above and below */
+}
+
+/* Make it smaller on mobile devices */
+@media (max-width: 768px) {
+    .break-space {
+        height: 2rem;
+        margin: 1.5rem 0;
+    }
+}
+/* events section */
+.event-card {
+    border-radius: 15px;
+    overflow: hidden;
+    height: 100%;
+    background: #f8f9fa;
+    transition: transform 0.2s;
+}
+
+.event-card:hover {
+    transform: translateY(-5px);
+}
+
+.event-header {
+    position: relative;
+    color: white;
+    padding: 15px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.event-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+.event-header h4 {
+    position: relative;
+    z-index: 2;
+    font-size: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.event-body {
+    padding: 20px;
+    min-height: 300px;
+    display: flex;
+    flex-direction: column;
+}
+
+.venue-time {
+    font-size: 0.9rem;
+    color: #6c757d;
+    margin-top: auto;
+    padding-top: 20px;
+}
+
+.competition-tag {
+    font-size: 0.8rem;
+    color: #6c757d;
+    margin-bottom: 8px;
+    background: rgba(26, 71, 42, 0.1);
+    padding: 4px 8px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
+.more-link {
+    color: #1a472a;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 15px;
+    display: inline-block;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.subscribe-btn {
+    font-size: 0.9rem;
+    padding: 2px 10px;
+    border-radius: 15px;
+    background: #e9ecef;
+    color: #495057;
+    text-decoration: none;
+}
+
+.event-description {
+    line-height: 1.6;
+    margin: 15px 0;
+}
+/* archieve section */
+.archive-title {
+    font-size: 4rem;
+    font-weight: 900;
+    margin-bottom: 4rem;
+    letter-spacing: 1px;
+}
+
+.see-all {
+    font-size: 2rem;
+    font-weight: 600;
+    text-decoration: none;
+    color: #000000;
+    font-size: 1.5rem;
+    margin-top: -4rem;
+
+}
+.see-all:hover {
+    color: #ce4a0d;
+}
+.img-container {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.soccer-img {
+    width: 100%;
+    transition: transform 0.3s ease;
+}
+
+.soccer-img:hover {
+    transform: scale(1.1);
+}
+
+.caption {
+    margin-top: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #333;
+}
+/* stadium section */
+.lisbon-section {
+    background: linear-gradient(to right,#162B4F,#2a4b83,#061124);
+    color: white;
+    padding: 4rem 0;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+}
+.stadium-section {
+    background: linear-gradient(to right,#162B4F,#2a4b83,#061124);
+    color: white;
+    padding: 4rem 0;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+}
+.casa-section {
+    background: linear-gradient(to right,#162B4F,#2a4b83,#061124);
+    color: white;
+    padding: 4rem 0;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+}
+.main-title {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: left;
+    margin-bottom: 2rem;
+    background: linear-gradient(45deg, #fff, #e0e0e0);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.stadium-name {
+    font-size: 2rem;
+    color:  #e95e1e;
+    text-align: left;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+}
+
+.stadium-description {
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.8;
+    color: #e0e0e0;
+    margin-bottom: 2rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.stadium-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+.stadium-image:hover {
+    transform: scale(1.02);
+}
+.lisbon-image {
+    width: 100%;
+    height: 550px;
+    object-fit: cover;
+    border-radius: 20px;
+    transition: transform 0.3s ease;
+}
+.lisbon-image:hover {
+    transform: scale(1.02);
+}
+
+.view-more-btn {
+    background: #e95e1e;
+    color: white;
+    border: none;
+    padding: 0.8rem 2rem;
+    border-radius: 25px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+}
+.view-more-btn:hover {
+    background: #e95e1e;
+    color: white;
+    transform: translateY(-2px);
+}
+
+
+
+.text-content {
+    padding: 2rem;
+}
+
+.image-container {
+    padding: 1rem;
+}
+
+/* gorups */
+.group-header {
+    background-color: #063960;
+    color: white;
+    border-radius: 6px 6px 0 0;
+    padding: 0.75rem 1rem;
+}
+
+.team-row:hover {
+    background-color: #f8f9fa;
+}
+
+.team-flag {
+    width: 30px;
+    height: 20px;
+    margin-right: 10px;
+    object-fit: cover;
+}
+
+.group-card {
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    border-radius: 6px;
+}
+
+.table th, .table td {
+    padding: 0.75rem;
+    vertical-align: middle;
+    text-align: center;
+}
+
+.table td:first-child {
+    text-align: left;
+}
+
+.groups-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 15px;
+}
+
+.table {
+    margin-bottom: 0;
+}
+
+/* footer */
+
+.rm-footer {
+    background-color:#012139;
+    color: #fff;
+    padding: 0px 0 20px;
+    font-family: Arial, sans-serif;
+}
+
+.footer-section-title {
+    color: #fff;
+    font-size: 1.1rem;
+    margin-bottom: 1.2rem;
+    text-transform: uppercase;
+}
+
+.footer-links a {
+    color: #999;
+    text-decoration: none;
+    display: block;
+    margin-bottom: 0.8rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #ffd700;
+}
+
+.social-links a {
+    color: #fff;
+    font-size: 1.5rem;
+    margin-right: 1.5rem;
+    transition: color 0.3s ease;
+}
+
+
+.legal-links {
+    border-top: 1px solid #333;
+    margin-top: 40px;
+    padding-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .footer-col {
+        margin-bottom: 30px;
+    }
+}
+
+/* sponsor */
+
+.sponsor{
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 0px;
+}
+
+.sponsor-img {
+    filter: grayscale(100%) brightness(200%);
+    transition: all 0.3s ease;
+    opacity: 0.7;
+    max-width: 120px;    /* Limits the maximum width of images */
+    height: auto;        /* Maintains aspect ratio */
+    width: 100%;        /* Makes images responsive */
+}
+
+.sponsor-img:hover {
+    filter: grayscale(0%) brightness(100%);
+    opacity: 1;
+}
+
+.sponsors-wrapper {
+    background-color: rgba(255, 255, 255, 0.05);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.social-links a {
+    color:  #477da6;
+    font-size: 24px;
+    margin-right: 70px;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+.social-links a:hover {
+    color: #ccb800;
+}
+.copyright {
+    color: #477da6;
+    font-size: 14px;
+    margin-top: 20px;
+}
+
+
+
+
+
+
+
+
